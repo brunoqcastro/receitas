@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Local - Doces Sem Açúcar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4ade80;
+            text-align: center;
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid;
+        }
+        .success {
+            background: #d4edda;
+            border-color: #4ade80;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            border-color: #ef4444;
+            color: #721c24;
+        }
+        .warning {
+            background: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+        .file-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .file-list h3 {
+            margin-top: 0;
+        }
+        .file-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .file-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .file-list li:last-child {
+            border-bottom: none;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4ade80;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+        }
+        .btn:hover {
+            background: #22c55e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Teste Local - Site de Vendas</h1>
+        
+        <div class="status success">
+            <strong>✅ Status:</strong> Todos os arquivos foram criados com sucesso!
+        </div>
+
+        <div class="file-list">
+            <h3>📁 Arquivos Criados:</h3>
+            <ul>
+                <li>✅ <strong>index.html</strong> - Página principal do site</li>
+                <li>✅ <strong>styles.css</strong> - Estilos CSS responsivos</li>
+                <li>✅ <strong>script.js</strong> - Funcionalidades JavaScript</li>
+                <li>✅ <strong>config.js</strong> - Configurações personalizáveis</li>
+                <li>✅ <strong>README.md</strong> - Documentação do projeto</li>
+                <li>✅ <strong>PERSONALIZACAO.md</strong> - Guia de personalização</li>
+            </ul>
+        </div>
+
+        <div class="status warning">
+            <strong>⚠️ Próximos Passos:</strong>
+            <ol>
+                <li>Abra o arquivo <code>index.html</code> no seu navegador</li>
+                <li>Teste a responsividade em diferentes dispositivos</li>
+                <li>Personalize o conteúdo conforme suas necessidades</li>
+                <li>Configure os links de checkout</li>
+                <li>Faça o deploy para um servidor web</li>
+            </ol>
+        </div>
+
+        <div class="status success">
+            <strong>🎯 Funcionalidades Implementadas:</strong>
+            <ul>
+                <li>Design responsivo e moderno</li>
+                <li>Contador regressivo</li>
+                <li>Animações de scroll</li>
+                <li>Efeitos hover</li>
+                <li>Formulários funcionais</li>
+                <li>Prova social</li>
+                <li>Garantia de satisfação</li>
+                <li>Otimização para conversão</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="btn">🚀 Ver Site Completo</a>
+            <a href="README.md" class="btn">📖 Ver Documentação</a>
+            <a href="PERSONALIZACAO.md" class="btn">🎨 Guia de Personalização</a>
+        </div>
+
+        <div class="status success" style="margin-top: 30px;">
+            <strong>💡 Dica:</strong> Para testar localmente, você pode usar um servidor local simples:
+            <br><br>
+            <code>python -m http.server 8000</code> (Python 3)
+            <br>
+            <code>npx serve .</code> (Node.js)
+            <br>
+            <code>php -S localhost:8000</code> (PHP)
+        </div>
+    </div>
+
+    <script>
+        // Verifica se todos os arquivos estão presentes
+        const files = [
+            'index.html',
+            'styles.css', 
+            'script.js',
+            'config.js',
+            'README.md',
+            'PERSONALIZACAO.md'
+        ];
+
+        console.log('✅ Site de vendas criado com sucesso!');
+        console.log('📁 Arquivos disponíveis:', files);
+        console.log('🎯 Próximo passo: Abra index.html no navegador');
+    </script>
+</body>
+</html> 

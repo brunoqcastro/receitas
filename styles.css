@@ -1,0 +1,972 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Seção Hero */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-text {
+    order: 2;
+    text-align: left;
+}
+
+.hero-image {
+    order: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin-bottom: 0;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-features {
+    margin-bottom: 40px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.feature i {
+    margin-right: 15px;
+    color: #4ade80;
+    font-size: 1.3rem;
+}
+
+.cta-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.price {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.original-price {
+    display: block;
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 1.1rem;
+}
+
+.current-price {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4ade80;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #4ade80, #22c55e);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(74, 222, 128, 0.3);
+}
+
+.cta-button.large {
+    padding: 20px 50px;
+    font-size: 1.3rem;
+}
+
+.guarantee-text {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.guarantee-text i {
+    color: #4ade80;
+    margin-right: 5px;
+}
+
+.hero-book-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.hero-book {
+    max-width: 300px;
+    height: auto;
+    z-index: 2;
+    position: relative;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    animation: float 6s ease-in-out infinite;
+    border-radius: 10px;
+    transform: rotateY(-5deg) rotateX(5deg);
+    transition: transform 0.3s ease;
+}
+
+.hero-book:hover {
+    transform: rotateY(-3deg) rotateX(3deg) scale(1.05);
+}
+
+.hero-book-bg {
+    max-width: 350px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(-5deg) rotateX(5deg);
+    z-index: 1;
+    opacity: 0.15;
+    filter: blur(3px);
+    border-radius: 10px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotateY(-5deg) rotateX(5deg);
+    }
+    50% {
+        transform: translateY(-20px) rotateY(-3deg) rotateX(3deg);
+    }
+}
+
+/* Seção Problema e Solução */
+.problem-solution {
+    padding: 100px 0;
+    background: white;
+}
+
+.problem-solution h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #1f2937;
+}
+
+.problem-solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.problems h3, .solution h3 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+.problems ul {
+    list-style: none;
+}
+
+.problems li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    padding: 15px;
+    background: #fef2f2;
+    border-radius: 10px;
+    border-left: 4px solid #ef4444;
+}
+
+.problems li i {
+    color: #ef4444;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.solution-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+}
+
+.solution-card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.solution-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.book-showcase {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.book-front {
+    max-width: 150px;
+    height: auto;
+    z-index: 2;
+    position: relative;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.book-back {
+    max-width: 160px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.3;
+    filter: blur(1px);
+}
+
+.book-showcase:hover .book-front {
+    transform: scale(1.05);
+}
+
+/* Seção O que você vai encontrar */
+.what-you-get {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.what-you-get h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #1f2937;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.feature-card p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Seção Benefícios */
+.benefits {
+    padding: 100px 0;
+    background: white;
+}
+
+.benefits h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #1f2937;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.benefit-card i {
+    font-size: 4rem;
+    color: #4ade80;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.benefit-card p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Seção Testimonials */
+.testimonials {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.testimonials h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #1f2937;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stars {
+    margin-bottom: 20px;
+}
+
+.stars i {
+    color: #fbbf24;
+    font-size: 1.2rem;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    color: #374151;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.testimonial-author h4 {
+    font-size: 1.1rem;
+    color: #1f2937;
+}
+
+.testimonial-author span {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Seção Oferta */
+.offer {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.offer h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+}
+
+.offer-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.offer-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.offer-header h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.offer-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.offer-price {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.offer-price .original-price {
+    display: block;
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 1.3rem;
+}
+
+.offer-price .current-price {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4ade80;
+}
+
+.offer-price .discount {
+    display: block;
+    background: #4ade80;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.bonus-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.bonus-section h4 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.bonus-section ul {
+    list-style: none;
+}
+
+.bonus-section li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.bonus-section li i {
+    color: #4ade80;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.countdown {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.countdown p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.countdown-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    min-width: 80px;
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4ade80;
+}
+
+.countdown-item label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Seção Garantia */
+.guarantee {
+    padding: 100px 0;
+    background: white;
+}
+
+.guarantee-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.guarantee-icon {
+    font-size: 4rem;
+    color: #4ade80;
+    margin-bottom: 30px;
+}
+
+.guarantee h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+.guarantee p {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.guarantee-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.guarantee-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    color: #1f2937;
+}
+
+.guarantee-feature i {
+    color: #4ade80;
+    font-size: 1.3rem;
+}
+
+/* Seção Final CTA */
+.final-cta {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.final-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.final-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.final-offer {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.price-highlight {
+    margin-bottom: 30px;
+}
+
+.price-highlight .original-price {
+    display: block;
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 1.2rem;
+}
+
+.price-highlight .current-price {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4ade80;
+}
+
+/* Footer */
+.footer {
+    background: #1f2937;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #374151;
+    opacity: 0.8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-text {
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+        height: 300px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-book {
+        max-width: 250px;
+    }
+
+    .hero-book-bg {
+        max-width: 300px;
+    }
+
+    .problem-solution-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .countdown-timer {
+        flex-wrap: wrap;
+    }
+
+    .guarantee-features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+
+    .offer-card {
+        padding: 30px 20px;
+    }
+
+    .countdown-timer {
+        gap: 10px;
+    }
+
+    .countdown-item {
+        min-width: 60px;
+        padding: 15px;
+    }
+}
+
+/* Seção de Destaque do Livro */
+.book-highlight {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.book-highlight h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #1f2937;
+}
+
+.book-presentation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.book-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-3d {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.book-3d-front {
+    max-width: 250px;
+    height: auto;
+    z-index: 2;
+    position: relative;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+    transform: rotateY(-15deg) rotateX(5deg);
+}
+
+.book-3d-back {
+    max-width: 260px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(-15deg) rotateX(5deg);
+    z-index: 1;
+    opacity: 0.2;
+    filter: blur(2px);
+}
+
+.book-3d:hover .book-3d-front {
+    transform: rotateY(-5deg) rotateX(2deg) scale(1.05);
+}
+
+.book-info {
+    padding: 40px;
+}
+
+.book-info h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+.book-info ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.book-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #374151;
+}
+
+.book-info li i {
+    color: #4ade80;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.book-price {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.book-price .original-price {
+    display: block;
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 1.2rem;
+    color: #6b7280;
+}
+
+.book-price .current-price {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4ade80;
+}
+
+/* Responsividade para a seção do livro */
+@media (max-width: 768px) {
+    .book-presentation {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .book-3d {
+        height: 300px;
+    }
+    
+    .book-3d-front {
+        max-width: 200px;
+    }
+    
+    .book-3d-back {
+        max-width: 210px;
+    }
+    
+    .book-info {
+        padding: 20px;
+        text-align: center;
+    }
+}
