@@ -28,15 +28,35 @@
     </script>
 </head>
 <body>
+    <!-- Timer de Promoção - Navbar -->
+    <nav class="promo-timer-nav">
+        <div class="container">
+            <div class="timer-nav-content">
+                <div class="timer-nav-left">
+                    <i class="fas fa-fire"></i>
+                    <span class="timer-text">🔥 OFERTA ESPECIAL EXPIRA EM:</span>
+                </div>
+                <div class="timer-nav-center">
+                    <div class="countdown-nav">
+                        <span id="minutes">15</span>
+                        <span class="separator">:</span>
+                        <span id="seconds">00</span>
+                    </div>
+                </div>
+                <div class="timer-nav-right">
+                    <button class="cta-button timer-btn" onclick="window.open('https://pay.cakto.com.br/48byg93_515487', '_blank')">
+                        <i class="fas fa-bolt"></i>
+                        GARANTIR
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <!-- Banner Principal -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-image">
-                    <div class="hero-book-container">
-                        <img src="livro_semfundo.png" alt="E-book Doces Sem Açúcar" class="hero-book">
-                    </div>
-                </div>
                 <div class="hero-text">
                     <h1>Descubra o Prazer de Doces Sem Açúcar!</h1>
                     <p class="hero-subtitle">Aprenda a fazer sobremesas deliciosas e saudáveis que não comprometem sua dieta. Transforme sua relação com os doces e mantenha-se saudável!</p>
@@ -54,58 +74,67 @@
                             <span>100% natural e saudável</span>
                         </div>
                     </div>
-                    <div class="cta-section">
-                        <div class="price">
-                            <span class="original-price">De R$ 97,00</span>
-                            <span class="current-price">Por apenas R$ 19,90</span>
-                        </div>
-                        <button class="cta-button" onclick="window.open('https://pay.cakto.com.br/48byg93_515487', '_blank')">
-                            <i class="fas fa-shopping-cart"></i>
-                            Comprar Agora - R$ 19,90
-                        </button>
-                        <p class="guarantee-text">
-                            <i class="fas fa-shield-alt"></i>
-                            Garantia de 7 dias ou seu dinheiro de volta
-                        </p>
+                </div>
+                <div class="cta-section">
+                    <div class="hero-book-container">
+                        <img src="livro_semfundo.png" alt="E-book Doces Sem Açúcar" class="hero-book">
                     </div>
+                    <div class="price">
+                        <span class="original-price">De R$ 97,00</span>
+                        <span class="current-price">Por apenas R$ 19,90</span>
+                    </div>
+                    <button class="cta-button" onclick="window.open('https://pay.cakto.com.br/48byg93_515487', '_blank')">
+                        <i class="fas fa-shopping-cart"></i>
+                        Comprar Agora - R$ 19,90
+                    </button>
+                    <p class="guarantee-text">
+                        <i class="fas fa-shield-alt"></i>
+                        Garantia de 7 dias ou seu dinheiro de volta
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Problema e Solução -->
-    <section class="problem-solution">
-        <div class="container">
-            <h2>Você Também Sofre com a Vontade de Comer Doces?</h2>
-            <div class="problem-solution-grid">
-                <div class="problems">
-                    <h3>Os Problemas Mais Comuns:</h3>
-                    <ul>
-                        <li><i class="fas fa-times-circle"></i> Vontade incontrolável de comer doces</li>
-                        <li><i class="fas fa-times-circle"></i> Culpa após consumir açúcar</li>
-                        <li><i class="fas fa-times-circle"></i> Dificuldade para encontrar opções saudáveis</li>
-                        <li><i class="fas fa-times-circle"></i> Receitas complicadas e demoradas</li>
-                        <li><i class="fas fa-times-circle"></i> Falta de conhecimento sobre substitutos</li>
-                    </ul>
-                </div>
-                <div class="solution">
-                    <h3>A Solução Perfeita:</h3>
-                    <div class="solution-card">
-                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="E-book Doces Sem Açúcar">
-                        <h4>E-book "Doces Sem Açúcar"</h4>
-                        <p>Descubra como satisfazer sua vontade de doces de forma saudável e deliciosa!</p>
-                        <button class="cta-button" onclick="window.open('https://pay.cakto.com.br/48byg93_515487', '_blank')">
-                            <i class="fas fa-shopping-cart"></i>
-                            Comprar Agora - R$ 19,90
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Seção "O que você vai encontrar" -->
     <section class="what-you-get">
+        <div class="desserts-carousel">
+            <h3>Algumas das Deliciosas Receitas que Você Vai Aprender</h3>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Bolo de Chocolate Fit">
+                        <h4>Bolo de Frutas Vermelhas Fit</h4>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Trufas de Cacau">
+                        <h4>Trufas de Cacau</h4>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sorvete de Frutas">
+                        <h4>Sorvete de Frutas</h4>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cookies de Aveia">
+                        <h4>Cookies de Aveia</h4>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mousse de Maracujá">
+                        <h4>Mousse de Fitness</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next" onclick="moveCarousel(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
         <div class="container">
             <h2>O Que Você Vai Encontrar no E-book</h2>
             <div class="features-grid">
@@ -140,6 +169,10 @@
                     <p>Guia de substituições + Lista de compras + Plano semanal</p>
                 </div>
             </div>
+            
+            <!-- Carrossel de Doces Fit -->
+            
+            
             <div class="cta-section-center">
                 <button class="cta-button large" onclick="window.open('https://pay.cakto.com.br/48byg93_515487', '_blank')">
                     <i class="fas fa-shopping-cart"></i>
@@ -153,101 +186,46 @@
         </div>
     </section>
 
-    <!-- Seção de Benefícios -->
-    <section class="benefits">
-        <div class="container">
-            <h2>Principais Benefícios</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <i class="fas fa-heart"></i>
-                    <h3>Saúde e Sabor</h3>
-                    <p>Mantenha-se saudável sem abrir mão do prazer de comer doces deliciosos</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-home"></i>
-                    <h3>Praticidade na Cozinha</h3>
-                    <p>Receitas simples e ingredientes fáceis de encontrar</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-smile"></i>
-                    <h3>Satisfação Sem Culpa</h3>
-                    <p>Desfrute de sobremesas incríveis sem se preocupar com calorias</p>
-                </div>
-            </div>
-            <div class="cta-section-center">
-                <button class="cta-button large" onclick="window.open('https://pay.cakto.com.br/48byg93_515487', '_blank')">
-                    <i class="fas fa-shopping-cart"></i>
-                    Começar Agora - R$ 19,90
-                </button>
-                <p class="guarantee-text">
-                    <i class="fas fa-shield-alt"></i>
-                    Garantia de 7 dias ou seu dinheiro de volta
-                </p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Seção de Prova Social -->
-    <section class="testimonials">
+
+    <!-- Seção de Depoimentos do WhatsApp -->
+    <section class="whatsapp-testimonials">
         <div class="container">
-            <h2>O Que Nossos Leitores Dizem</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+            <h2>Depoimentos Reais do WhatsApp</h2>
+            <p class="section-subtitle">Veja o que nossos clientes estão dizendo sobre o e-book</p>
+            <div class="whatsapp-testimonials-grid">
+                <div class="whatsapp-testimonial">
+                    <div class="whatsapp-header">
+                        <i class="fab fa-whatsapp"></i>
+                        <span></span>
                     </div>
-                    <p>"Finalmente consegui satisfazer minha vontade de doces sem culpa! As receitas são incríveis e fáceis de fazer. Recomendo para todos!"</p>
-                    <div class="testimonial-author">
-                        <img src="https://static.stealthelook.com.br/wp-content/uploads/2023/11/mulher-negra-carol-figueiredo-cabelo-natural-20231127160756.jpg" alt="Maria Silva">
-                        <div>
-                            <h4>Maria Silva</h4>
-                            <span>Nutricionista</span>
-                        </div>
+                    <div class="whatsapp-content">
+                        <img src="depoimento2.jpeg" alt="Depoimento WhatsApp 1" class="whatsapp-image">
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="whatsapp-testimonial">
+                    <div class="whatsapp-header">
+                        <i class="fab fa-whatsapp"></i>
+                        <span></span>
                     </div>
-                    <p>"Como diabético, sempre tive dificuldade para encontrar doces que posso comer. Este e-book mudou minha vida! As receitas são deliciosas!"</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80" alt="João Santos">
-                        <div>
-                            <h4>João Santos</h4>
-                            <span>Professor</span>
-                        </div>
+                    <div class="whatsapp-content">
+                        <img src="depoimento3.jpg" alt="Depoimento WhatsApp 2" class="whatsapp-image">
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="whatsapp-testimonial">
+                    <div class="whatsapp-header">
+                        <i class="fab fa-whatsapp"></i>
+                        <span></span>
                     </div>
-                    <p>"Minhas crianças adoram os doces que faço com as receitas do e-book! É incrível ver elas se deliciando com opções saudáveis."</p>
-                    <div class="testimonial-author">
-                        <img src="https://conteudo.imguol.com.br/c/entretenimento/df/2020/11/30/a-escritora-e-professora-de-ingles-ryane-leao-1606751746424_v2_450x600.jpg" alt="Ana Costa">
-                        <div>
-                            <h4>Ana Costa</h4>
-                            <span>Jardineira</span>
-                        </div>
+                    <div class="whatsapp-content">
+                        <img src="depoimento4.jpg" alt="Depoimento WhatsApp 3" class="whatsapp-image">
                     </div>
                 </div>
             </div>
             <div class="cta-section-center">
                 <button class="cta-button large" onclick="window.open('https://pay.cakto.com.br/48byg93_515487', '_blank')">
                     <i class="fas fa-shopping-cart"></i>
-                    Ver Depoimentos - R$ 19,90
+                    Quero o E-book - R$ 19,90
                 </button>
                 <p class="guarantee-text">
                     <i class="fas fa-shield-alt"></i>
@@ -318,27 +296,6 @@
         </div>
     </section>
 
-    <!-- Chamada Final para Ação -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>Transforme Sua Relação com os Doces Hoje Mesmo!</h2>
-            <p>Não perca mais tempo sofrendo com a vontade de comer doces. Comece agora mesmo sua jornada para uma vida mais saudável e saborosa!</p>
-            <div class="final-offer">
-                <div class="price-highlight">
-                    <span class="original-price">De R$ 97,00</span>
-                    <span class="current-price">Por apenas R$ 19,90</span>
-                </div>
-                <button class="cta-button large" onclick="window.open('https://pay.cakto.com.br/48byg93_515487', '_blank')">
-                    <i class="fas fa-shopping-cart"></i>
-                    Comprar Agora - R$ 19,90
-                </button>
-                <p class="guarantee-text">
-                    <i class="fas fa-shield-alt"></i>
-                    Garantia de 7 dias ou seu dinheiro de volta
-                </p>
-            </div>
-        </div>
-    </section>
 
     <!-- Rodapé -->
     <footer class="footer">
@@ -371,6 +328,10 @@
             </div>
         </div>
     </footer>
+
+    <!-- Container para Pop-ups de Vendas Recentes -->
+    <div id="sales-popup-container"></div>
+
     <script src="script.js"></script>
 </body>
 </html> 
