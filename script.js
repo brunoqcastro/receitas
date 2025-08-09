@@ -170,10 +170,11 @@ document.querySelectorAll('.feature-card, .benefit-card, .testimonial-card').for
     });
 });
 
-// Funcionalidade do Carrossel de Doces Fit
-let currentSlide = 0;
+// Funcionalidade do Carrossel de Doces Fit - Rolagem Contínua como Esteira
 let slides, track, slideWidth;
-let carouselInterval;
+let animationId;
+let currentPosition = 0;
+let isPaused = false;
 
 function initializeCarousel() {
     slides = document.querySelectorAll('.carousel-slide');
@@ -184,73 +185,73 @@ function initializeCarousel() {
         const isMobile = window.innerWidth <= 768;
         slideWidth = isMobile ? 270 : 320; // Largura do slide + gap
         
-        updateCarouselButtons();
+        // Clona os slides para criar efeito infinito
+        createInfiniteCarousel();
         
-        // Auto-play do carrossel
-        carouselInterval = setInterval(() => {
-            const totalSlides = slides.length;
-            const maxSlides = Math.floor(track.offsetWidth / slideWidth);
-            const maxIndex = Math.max(0, totalSlides - maxSlides);
-            
-            if (currentSlide >= maxIndex) {
-                currentSlide = 0;
-            } else {
-                currentSlide++;
-            }
-            
-            const translateX = -currentSlide * slideWidth;
-            track.style.transform = `translateX(${translateX}px)`;
-            updateCarouselButtons();
-        }, 3000); // Muda a cada 3 segundos
+        // Inicia a animação contínua
+        startContinuousAnimation();
     }
 }
 
-function moveCarousel(direction) {
-    if (!track || !slides.length) return;
+function createInfiniteCarousel() {
+    if (!track || slides.length === 0) return;
     
-    // Para o auto-play temporariamente
-    if (carouselInterval) {
-        clearInterval(carouselInterval);
+    // Clona os slides originais várias vezes para garantir continuidade
+    const originalSlides = Array.from(slides);
+    
+    // Adiciona 3 conjuntos de slides clonados
+    for (let i = 0; i < 3; i++) {
+        const clonedSlides = originalSlides.map(slide => slide.cloneNode(true));
+        clonedSlides.forEach(slide => {
+            track.appendChild(slide);
+        });
     }
     
-    const totalSlides = slides.length;
-    const maxSlides = Math.floor(track.offsetWidth / slideWidth);
-    const maxIndex = Math.max(0, totalSlides - maxSlides);
+    // Atualiza a referência dos slides
+    slides = document.querySelectorAll('.carousel-slide');
     
-    currentSlide += direction;
+    // Remove a transição para animação contínua
+    track.style.transition = 'none';
+}
+
+function startContinuousAnimation() {
+    const speed = 1; // pixels por frame (ajuste para velocidade)
     
-    // Limita o índice
-    if (currentSlide < 0) {
-        currentSlide = 0;
-    } else if (currentSlide > maxIndex) {
-        currentSlide = maxIndex;
-    }
-    
-    // Atualiza a posição do carrossel
-    const translateX = -currentSlide * slideWidth;
-    track.style.transform = `translateX(${translateX}px)`;
-    
-    // Atualiza os botões
-    updateCarouselButtons();
-    
-    // Reinicia o auto-play após 5 segundos
-    setTimeout(() => {
-        carouselInterval = setInterval(() => {
-            const totalSlides = slides.length;
-            const maxSlides = Math.floor(track.offsetWidth / slideWidth);
-            const maxIndex = Math.max(0, totalSlides - maxSlides);
+    function animate() {
+        if (!isPaused) {
+            currentPosition -= speed;
             
-            if (currentSlide >= maxIndex) {
-                currentSlide = 0;
-            } else {
-                currentSlide++;
+            // Se chegou ao final de um conjunto de slides, volta ao início
+            const totalWidth = slides.length * slideWidth;
+            const originalSlidesWidth = (slides.length / 4) * slideWidth; // 4 conjuntos de slides
+            
+            if (Math.abs(currentPosition) >= originalSlidesWidth) {
+                currentPosition = 0;
             }
             
-            const translateX = -currentSlide * slideWidth;
-            track.style.transform = `translateX(${translateX}px)`;
-            updateCarouselButtons();
-        }, 3000);
-    }, 5000);
+            track.style.transform = `translateX(${currentPosition}px)`;
+        }
+        
+        animationId = requestAnimationFrame(animate);
+    }
+    
+    animate();
+}
+
+function moveCarousel(direction) {
+    // Para a animação contínua temporariamente
+    isPaused = true;
+    
+    // Move manualmente
+    const moveAmount = slideWidth * direction;
+    currentPosition -= moveAmount;
+    
+    track.style.transform = `translateX(${currentPosition}px)`;
+    
+    // Retoma a animação após 3 segundos
+    setTimeout(() => {
+        isPaused = false;
+    }, 3000);
 }
 
 function updateCarouselButtons() {
@@ -258,20 +259,29 @@ function updateCarouselButtons() {
     const nextBtn = document.querySelector('.carousel-btn.next');
     
     if (prevBtn) {
-        prevBtn.disabled = currentSlide === 0;
+        prevBtn.disabled = isPaused;
     }
     
     if (nextBtn) {
-        const totalSlides = slides.length;
-        const maxSlides = Math.floor(track?.offsetWidth / slideWidth) || 3;
-        const maxIndex = Math.max(0, totalSlides - maxSlides);
-        nextBtn.disabled = currentSlide >= maxIndex;
+        nextBtn.disabled = isPaused;
     }
 }
 
 // Inicializa o carrossel quando a página carrega
 document.addEventListener('DOMContentLoaded', function() {
     initializeCarousel();
+    
+    // Pausa o carrossel quando o mouse está sobre ele
+    const carouselContainer = document.querySelector('.carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+        
+        carouselContainer.addEventListener('mouseleave', () => {
+            isPaused = false;
+        });
+    }
 });
 
 // Recalcula o carrossel quando a janela é redimensionada
@@ -279,6 +289,13 @@ window.addEventListener('resize', function() {
     const isMobile = window.innerWidth <= 768;
     slideWidth = isMobile ? 270 : 320;
     updateCarouselButtons();
+});
+
+// Limpa a animação quando a página é fechada
+window.addEventListener('beforeunload', function() {
+    if (animationId) {
+        cancelAnimationFrame(animationId);
+    }
 });
 
 // Função para validar formulários
